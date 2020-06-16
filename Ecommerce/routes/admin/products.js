@@ -12,7 +12,6 @@ const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 router.get('/admin/products', requireAuth, async (req, res) => {
-    console.log('hi');
     const products = await productsRepo.getAll();
     res.send(productsIndexTemplate({ products }));
 });
